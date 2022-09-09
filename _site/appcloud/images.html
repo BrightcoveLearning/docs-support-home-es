@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Transcodificador de imagen</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <!-- <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css"> -->
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = Window.DataLayer || []; function gtag (){dataLayer.push(arguments);} gtag ('js', new Date ()); gtag ('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+
+      <img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/brightcove-black-on-white.svg" alt="Brightcove">
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">Inglés</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">español</option></select>
+
+<script>
+/*<![CDATA[ */ función dogTranslate (lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;} /*]]> */
+</script>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Contacta con el soporte</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> Estado del sistema</a></span>
+    <br>
+
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+    
+    <li class="breadcrumb-item first-item"><a href="/">Inicio</a></li>
+     
+        <li class="breadcrumb-item"><a href="/appcloud/">Appcloud</a></li>
+        
+        <li class="breadcrumb-item active" aria-current="page">Transcodificador de imagen</li>
+       
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Otros documentos de Brightcove</option>
+					 
+							<option value="https://support.brightcove.com">Página principal de documentación</option>
+						  
+							<option value="">— NUBE DE VÍDEO —</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Desarrollo de jugadores Brightcove</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;API de plataforma de Video Cloud</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;SDK de dispositivos de Video Cloud</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integraciones y conectores CMS</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Información general de Video Cloud</option>
+						  
+							<option value="">— ELEMENTOS ESENCIALES DE VÍDEO —</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Baliza Brightcove</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove En directo</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						  
+							<option value="">— COMPLEMENTOS DE VIDEO CLOUD —</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Campaña Brightcove</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Galería Brightcove</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;SSAI de Brightcove</option>
+						 
+				</select>
+        <nav class="sidenav" id="side_nav">
+           
+            <h5><a href="/index.html">Inicio</a></h5>
+              
+            <h5><a href="https://studio.support.brightcove.com/index.html">Video Cloud Studio</a></h5>
+              
+            <h5><a href="https://player.support.brightcove.com/index.html">Jugador de Brightcove</a></h5>
+              
+            <h5><a href="https://apis.support.brightcove.com/index.html">API de plataforma de Video Cloud</a></h5>
+              
+            <h5><a href="https://apis.support.brightcove.com/index.html">SDK de dispositivos de Video Cloud</a></h5>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Capacitación</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/online-training-courses.html">Todos los cursos de formación online</a></li>
+                    
+                    <li><a href="/training/register-training.html">Regístrese para recibir formación dirigida por instructores</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud.html">Formación: Introducción a Video Cloud</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud-analytics.html">Formación: Introducción a Video Cloud Analytics</a></li>
+                    
+                    <li><a href="/training/training-demand-video-cloud-basics.html">Formación: Conceptos básicos de Video Cloud</a></li>
+                    
+                    <li><a href="/training/video-cloud-studio-training-videos.html">Vídeos de formación de Video Cloud Studio</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de Brightcove University</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Soporte</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Visualización de la página de estado del sistema Brightcove</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">Contactar con ventas</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Abrir un caso de soporte</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">Restablecer la contraseña del portal de soporte</a></li>
+                   
+              </ul>
+             
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 2rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
+<div class="BCL_objectives"><p>Usando el servicio de transcodificación de imágenes de App Cloud, que puede mejorar en gran medida el rendimiento de su aplicación al optimizar las imágenes para la entrega móvil.</p>
+  <!--break--></div>
+  <p>App Cloud proporciona un servicio que puede utilizar para transcodificar imágenes para sus aplicaciones. Con el servicio de transcodificación de imágenes, puede tomar su imagen de origen y convertirla al tamaño y formato que necesita para sus aplicaciones. Por ejemplo, si tiene una imagen original de 300x300 píxeles, pero su aplicación debe mostrarla a 100x100. Puede utilizar el servicio de transcodificación de imágenes para asegurarse de que la imagen siempre tenga el tamaño correcto para su contexto, sin tener que crear un nuevo archivo de imagen para cada contexto en el que utilice la imagen. También puede recortar la imagen y especificar la calidad (relación de compresión) de las imágenes JPG. Con el servicio de transcodificación de imágenes, puede:</p>
+  <ul>
+      <li>Mejore notablemente el rendimiento de su aplicación al reducir en gran medida el tamaño del archivo y el ancho de banda de red necesarios para mostrar su aplicación.</li>
+      <li>Reduzca la demanda de memoria al reducir el tamaño de las imágenes.</li>
+      <li>Asegúrese de que sus imágenes tengan el tamaño adecuado para mostrarse en dispositivos móviles.</li>
+      <li>Aproveche la caché del servidor de App Cloud, mejorando el rendimiento de la aplicación y reduciendo la carga en sus propios servidores.</li>
+  </ul>
+  <p>El servicio de transcodificación de imágenes de App Cloud actúa como un proxy entre sus imágenes y sus aplicaciones. Se accede al servicio con una URL simple en la que se antepone la URL de su imagen con la URL de nuestro servicio de transcodificación. Esto le permite colocar nuestro servicio de transcodificación en sus aplicaciones con muy poco esfuerzo. Por ejemplo, si tiene una imagen que vive en <code>http://my.example.com/image.png</code> normalmente lo solicitaría como:</p>
+  <pre>
+  &lt;img &nbsp;src = "http://my.example.com/image.png" &nbsp;alt = "Imagen hambrienta de ancho de banda" width = "500" height = "500" /&gt; </pre>
+  <p>Para transcodificarlo a una imagen más pequeña de 100x100 px, simplemente envíe la siguiente solicitud:</p>
+  <pre>
+  &lt;img &nbsp;src = "http://transcode.appcloud.brightcove.com?image=http://my.example.com/image.png&amp;width=100&amp;height=100" &nbsp;alt = "Mi imagen esbelta" width = "100" height = "100" /&gt;</pre>
+  <p>Para reducir una imagen a 100 px de ancho, conservando la relación de aspecto original:</p>
+  <pre>
+  &lt;img &nbsp;src = "http://transcode.appcloud.brightcove.com?image=http://my.example.com/image.png&amp;width=100" width = "100" /&gt;</pre>
+  <p>Para reducir una imagen a 100 px de ancho o 100 px de alto, lo que sea mayor, conservando la relación de aspecto original:</p>
+  <pre>
+  &lt;img &nbsp;src = "http://transcode.appcloud.brightcove.com?image=http://my.example.com/image.png&amp;max_dimension=100" /&gt;</pre>
+  <p>Para recortar la imagen, conservando una pieza de 100x100px en el centro, simplemente emite la siguiente solicitud:</p>
+  <pre>
+  &lt;img &nbsp;src = "http://transcode.appcloud.brightcove.com?image=http://my.example.com/image.png&amp;crop=200,200,100,100" &nbsp;alt = "Mi imagen esbelta" width = "100" height = "100" /&gt;</pre>
+  
+  <p>Para utilizar el servicio de transcodificación de imágenes, su imagen debe ser accesible en una URL disponible públicamente. La imagen debe estar en formato PNG, JPEG o GIF.</p>
+  <h2><a name="params"></a>Parámetros de consulta</h2>
+  <p>La llamada al servicio de transcodificación de imágenes utiliza los siguientes parámetros de consulta:</p>
+  <h3>imagen (obligatorio)</h3>
+  <p>La URL de acceso público en la que se puede encontrar su imagen original. Por ejemplo, <code>image = http: //my.example.com/image.png</code>.</p>
+  <h3>formato (opcional)</h3>
+  <p>El formato de la nueva imagen, que puede ser uno de los <code>png</code> , <code>jpg</code> , o <code>gif</code>. Si no especifica el formato, el formato de salida no se modifica de la imagen original.</p>
+  <h3>Parámetros de tamaño (opcional)</h3>
+  <p>Puede utilizar uno de los parámetros de tamaño, <code>ancho</code> , <code>altura</code> , o <code>dimensión_máxima</code> , si desea que la nueva imagen tenga un tamaño diferente al de la imagen original. Estos parámetros especifican una dimensión de la imagen final en píxeles.</p>
+  <ul>
+      <li>Si no especifica ningún parámetro de tamaño, la nueva imagen tendrá el mismo ancho y alto que la imagen original.</li>
+      <li>Si especifica <code>ancho</code> , pero no <code>altura</code> , la nueva imagen tendrá el ancho que especifique y tendrá la altura dictada por la relación de aspecto de la imagen original.</li>
+      <li>Si especifica <code>altura</code> , pero no <code>ancho</code> , la nueva imagen tendrá la altura que especifique y tendrá el ancho dictado por la relación de aspecto de la imagen original.</li>
+      <li>Si especifica <code>dimensión_máxima</code> , entonces la dimensión más grande de la nueva imagen será el tamaño que especifique, y la dimensión más pequeña tendrá el tamaño dictado por la relación de aspecto de la imagen original.</li>
+  </ul>
+  <p>En todos los casos, la nueva imagen tendrá la misma relación de aspecto que la imagen original, a menos que especifique tanto un <code>ancho</code> y <code>altura</code> y esa relación de aspecto es diferente de la relación de aspecto original.</p>
+  <h3>Parámetro de cultivo (opcional)</h3>
+  <h2>Usar una función de utilidad de transcodificación</h2>
+  <p>Para recortar su imagen, agregue el parámetro:</p>
+  <pre>cultivo = x, y, w, h</pre>
+  <p>Aquí, xey son las coordenadas del punto de inicio, medidas en píxeles desde la esquina superior izquierda (0,0). w y h son píxeles horizontales y verticales para conservar, comenzando en el punto de inicio y siguiendo hacia la derecha y hacia abajo.</p>
+  <p>Si se especifican tanto el recorte como el tamaño, primero se aplica el recorte y, a continuación, se cambia el tamaño de la imagen recortada.</p>
+  <h3>Parámetro de calidad (opcional)</h3>
+  <p>Solo para imágenes JPG, especifique la relación de compresión para la imagen resultante agregando el parámetro:</p>
+  <pre>calidad = x</pre>
+  <p>x es la ración de compresión que se aplicará; el valor predeterminado es 70.</p>
+  <p>Aquí hay una función de JavaScript útil para generar una URL de transcodificación de imagen:</p>
+  <pre>
+  función getTranscodeURL (url, opciones) { var src = "http://transcode.appcloud.brightcove.com?image=" + url; if (options) { if (options.max_dimension) { src += "&amp;max_dimension=" + options.max; } demás { if (options.width) { src += "&amp;width=" + options.width; } si (opciones.altura) { src += "&amp;height=" + options.height; } } si (opciones.formato) { src += "&amp;format=" + options.format; } si (opciones.crop) { src += "&amp;crop=" + options.crop; } si (opciones.calidad) { src += "&amp;quality" + options.quality; } } return src; };</pre>
+  <p>Por ejemplo, para transcodificar una imagen a 200 píxeles de ancho:</p>
+  <pre>
+  var tx_url = getTranscodeURL ("http://www.example.com/example.jpg", { width: 200 });</pre>
+  <p>Para recortar una imagen a 160x90, comenzando 100px desde la izquierda y 70px desde la parte superior, y especificando una relación de compresión de 65:</p>
+  <pre>var tx_url = getTranscodeURL ("http://www.example.com/example.jpg", { crop: "100,70,160,90" , quality: 65 });</pre>
+  <h2>Ejemplos de imágenes transcodificadas</h2>
+  <p>Para ver cuán drásticamente el servicio de transcodificación puede reducir el ancho de banda y la memoria que requieren los archivos de imágenes, eche un vistazo a estos ejemplos.</p>
+  <p>Primero tenemos una imagen de archivo JPEG de alta calidad:<br />
+  <img alt="" src="http://img.brightcove.com/ac-transcode-before.jpg" /></p>
+  <p>Esta imagen es de 425x282, con un tamaño de archivo de 130,879 bytes.</p>
+  <p>Pasándolo por el servicio de transcodificación con ancho = 250:<br />
+  <img alt="" src="http://img.brightcove.com/ac-transcode-after.jpg" /></p>
+  <p>La imagen ahora es de 250x165, con un tamaño de archivo de 34,017 bytes, una reducción del 74%.</p>
+  <p>Finalmente, podemos transcodificarlo al tamaño de la miniatura (ancho = 75):<br />
+  <img alt="" src="http://img.brightcove.com/ac-transcode-thumb.jpg" /></p>
+  <p>La imagen ahora es de 75x49, con un tamaño de archivo de 7686 bytes, ¡una reducción del 94%!</p>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      <nav class="right-side-nav" id="announcements">
+        <h6 class="toc">Anuncios</h6>
+        <ul id="announcement_list" class="list-none">
+          
+          <li></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Página actualizada por última vez el 04 Jan 2022
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
+
+        <h2>Soporte de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">Estado del sistema</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar con el soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Capacitación</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Cursos online</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Regístrese para un curso</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Reservados todos los derechos.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacidad</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Términos y condiciones</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init ({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }); SearchBox («sub», «pipeline.search-sent», función (_, consulta) { window.location = "/search.html?q=" + encodeURIComponent(query.q); });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+	<script>
+		pluma.replace ()
+	</script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+     { background-color: lightblue; } a.sj-paginator__paginator__paginator__paginator__paginator__paginator__paginator__current.css-so0ov7 { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } div.sj-tabs__tab div.sj-tabs__tabs__tab—seleccionado { border-bottom-color: crimson; background-color: #f8f8f8; } p.sj-result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text. css-31l7gp h3 { color: navy; font-size: 1.4rem; }
+    </style>
+
+</body>
+
+</html>
